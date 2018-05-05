@@ -1,0 +1,148 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="interface.css" />
+		<script type="text/javascript" src="magna_numerus.js"></script>
+		<script type="text/javascript" src="main.js"></script>
+		<script type="text/javascript" src="plants.js"></script>
+		<script type="text/javascript" src="forests.js"></script>
+	</head>
+			
+	<body>
+	<div id="tabs" style="display:none">
+		<button id="plantTabBtn" onclick="switchToTab('plants')">Plants</button>
+		<button id="forestTabBtn" onclick="switchToTab('forests')">Forests</button>
+	</div>
+
+	<div id="plants" class="tab">
+		<div id="plantstatus">
+			Cells: <span id="cellcount">0</span>
+			<br />
+			<span id="baseCRate">0</span>
+			<span id="adjustCRate" style="display:none">0</span>
+		</div>
+		<br />
+		<div id="plantdiv">
+			<table>
+				<tr class="plantrow">
+					<td width="30%">Moss</td>
+					<td width="30%"> <span id="plant0">0</span> </td>
+					<td> <button id="plant0btn" onclick="buyPlant(0)" class="plantbtn">Cost: 10</button> </td>
+				</tr>
+				<tr class="plantrow">
+					<td width="30%">Clover</td>
+					<td width="30%"> <span id="plant1">0</span> </td>
+					<td> <button id="plant1btn" onclick="buyPlant(1)" class="plantbtn">Cost: 100</button> </td>
+				</tr>
+				<tr class="plantrow">
+					<td width="30%">Flower</td>
+					<td width="30%"> <span id="plant2">0</span> </td>
+					<td> <button id="plant2btn" onclick="buyPlant(2)" class="plantbtn">Cost: 1.00k</button> </td>
+				</tr>
+				<tr class="plantrow">
+					<td width="30%">Shrub</td>
+					<td width="30%"> <span id="plant3">0</span> </td>
+					<td> <button id="plant3btn" onclick="buyPlant(3)" class="plantbtn">Cost: 10.00k</button> </td>
+				</tr>
+				<tr class="plantrow">
+					<td width="30%">Tree</td>
+					<td width="30%"> <span id="plant4">0</span> </td>
+					<td> <button id="plant4btn" onclick="buyPlant(4)" class="plantbtn">Cost: 100.00k</button> </td>
+				</tr>
+			</table>
+			
+		</div>
+		<br />
+		Diversity Bonus: <span id="divBonus" style="display:block">1.00x</span>
+		<br />
+		<div id="Pupgrades">
+			<h3>Upgrades:</h1>
+			
+			<p id="PupText0" style="display:none">text</p>
+			<button id="PupBtn0" style="display:none">btntext</button>
+			
+			<p id="PupText1" style="display:none">text</p>
+			<button id="PupBtn1" style="display:none">btntext</button>
+			
+			<p id="PupText2" style="display:none">text</p>
+			<button id="PupBtn2" style="display:none">btntext</button>
+			
+			<p id="PupText3" style="display:none">text</p>
+			<button id="PupBtn3" style="display:none">btntext</button>
+			
+			<p id="PupText4" style="display:none">text</p>
+			<button id="PupBtn4" style="display:none">btntext</button>
+			
+			<p id="PupText5" style="display:none">text</p>
+			<button id="PupBtn5" style="display:none">btntext</button>
+			
+			<p id="PupText6" style="display:none">text</p>
+			<button id="PupBtn6" style="display:none">btntext</button>
+			
+			<p id="PupText7" style="display:none">text</p>
+			<button id="PupBtn7" style="display:none">btntext</button>
+			
+			<p id="PupText8" style="display:none">text</p>
+			<button id="PupBtn8" style="display:none">btntext</button>
+			
+			<p id="PupText9" style="display:none">text</p>
+			<button id="PupBtn9" style="display:none">btntext</button>
+		</div>
+
+	</div>
+	
+	<div id="forests" class="tab" style="display:none">
+		<span id="forestSize">Forest Size: 1</span>
+		<br />
+		<span id="forestRate">Forest Growth Rate: 1.00</span>
+		<br />
+		<p id="landCleared">Cleared Acres: 10</p>
+		<!--<button id="clearLandBtn" onclick="buyLand()">Clear Land: 10b</button>-->
+		<br />
+		<br />
+		<p> Combine your forest into treants, gaining treants based on the size of your forest (NOTE: any previous treants are lost). </p>
+		<p> You currently have <span id="treantCount">0</span> treants </p>
+		<p> On reset you will gain <span id="prestigeTreants">0</span> treants </p>
+		<button id="forestPrestige" onclick="forestPrestige()">Combine forest</button>
+		<br />
+		<div id="stoneDiv" style="display:none">
+			<span id="stoneCount">Stone: 0</span>
+			<span id="stoneRate">Stone Production: 0</span>
+		</div>
+		<div id="Fupgrades" style="display:none">
+			<h3>Upgrades:</h1>
+			
+			<p id="FupText0" style="display:none">text</p>
+			<button id="FupBtn0" style="display:none">btntext</button>
+			
+			<p id="FupText1" style="display:none">text</p>
+			<button id="FupBtn1" style="display:none">btntext</button>
+			
+			<p id="FupText2" style="display:none">text</p>
+			<button id="FupBtn2" style="display:none">btntext</button>
+			
+			<p id="FupText3" style="display:none">text</p>
+			<button id="FupBtn3" style="display:none">btntext</button>
+			
+			<p id="FupText4" style="display:none">text</p>
+			<button id="FupBtn4" style="display:none">btntext</button>
+			
+			<p id="FupText5" style="display:none">text</p>
+			<button id="FupBtn5" style="display:none">btntext</button>
+			
+			<p id="FupText6" style="display:none">text</p>
+			<button id="FupBtn6" style="display:none">btntext</button>
+			
+			<p id="FupText7" style="display:none">text</p>
+			<button id="FupBtn7" style="display:none">btntext</button>
+			
+			<p id="FupText8" style="display:none">text</p>
+			<button id="FupBtn8" style="display:none">btntext</button>
+			
+			<p id="FupText9" style="display:none">text</p>
+			<button id="FupBtn9" style="display:none">btntext</button>
+		</div>
+	</div>
+		
+
+	</body>
+</html>
